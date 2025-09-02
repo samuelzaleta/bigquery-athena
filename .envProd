@@ -1,0 +1,12 @@
+GOOGLE_CLOUD_PROJECT="asistentes-digitales-prod"
+
+# AWS
+AWS_ACCESS_KEY_ID="AKIA6O2CZXAF5DPZKVZZ"
+AWS_SECRET_ACCESS_KEY="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"
+AWS_REGION="us-east-1"
+
+# S3 y Athena
+S3_BUCKET="datawarehouse-webhookfaf-exportlogs"
+ATHENA_DATABASE="lex_logs_webhook_faf"
+ATHENA_TABLE="voice_asesor"
+BIGQUERY_TABLE="asistentes-digitales-prod.logsCloudRun.voiceAsesorGCP"

@@ -1,0 +1,8 @@
+SDK
+gcloud auth login
+
+
+--Deploy Cloud run
+gcloud auth configure-docker us-central1-docker.pkg.dev
+docker build -t us-central1-docker.pkg.dev/asistentes-digitales-dev/bigquery-to-athena/bigquery-to-athena .
+docker push us-central1-docker.pkg.dev/asistentes-digitales-dev/bigquery-to-athena/bigquery-to-athena

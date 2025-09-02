@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "asistentes-digitales-qa",
+  "private_key_id": "aee59f8651cd6c4bc299bac38dae677e7e0de5b9",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDNKEiYPHawSCMh\ntoJk2zAqknro5z/mTaE2lqwDTXk8ljxy+fI30C3cdllp6TZUeBzTlKUGFxUC3190\n0FXIny136JoOz31su/lzZvgHFqN67fm5Cfxmzq9mczqatsiAN4I2LARgmXafyFp4\n1cHTX/KpVqBbRkFNu5FF3ST5GSBqrcIT4+AsevjRZjbmGHcUdREWKNpgJ3Yh1czq\nRAQ5zJjhBlRL4i9sWA6zEb3ZKdoAlrkZ8xi4cbsBRQGbo1BOKyawe+YtFSyF4me1\nOANCqWLqwYYHsxR2Xb15OK8rGBGXMuWPz/WN6Z+Q4Xr1/eXhJt0dQyDH4w8I87DN\nIOgIw6PDAgMBAAECggEAKunEuZdYKkqEkr426zrQCe+m5wXMH3PYh28f3vb7J5mz\nXkd7C4KvvSBCVr2SADw5p2Y92JbGbdnkgS4862CkZaMRaoyrSy3MoX+F3RG2s3WI\n2VRF6AlOtirfNNKMAQnbYlJ1vfEL16NUjVcFGp5Ex3gXxc/dxBE6c3ctDy/a0IVV\nH8YySMFrCa6HiDUR8hs84t6TnQa5i0PVCTw5Z8hvFoqiuELru0AC2Q7532J54vMa\no3md9s368At41qGVf++Nkmb0r8Dr9fplaiIGM2W9WrvOXqqtekfiTPoI4v6kL+XR\nx/LkzAL/vN8A/yPM60chGtBYb43DUEa7cf8trBrYVQKBgQDqWlVj85CZGCnipojy\nBhHWTYF7fRPxMn6FQFdx+4tkE6QiohSQKFTNvxATVskgS/d8ad6xCfX6ynWcHh9U\nA281A7yOMH/iHMGsShHBRuYJ81ARncMzkgLdKp2sVDAoC052heWikFk5mYolIKLz\nuGSxidJBI4zR37jm/tnyGvFmLwKBgQDgG5LCuDm3cgTe/IRgpZnv1N4divkHMww9\ncC10Dj7WRa5Jswj/e6rr2hlPLxxhf2sdYOKxywAe7lE2+FbpfH3Ssc7GzCh188U1\nzThPTyfGR01HvEgTXr2/PxJE7/6gYPzIMgGdt+vQnA4y6y4lBJNdWp/h0cSxJd4L\n3z2ex2hKrQKBgB8cNtG596wbJRRNf0iBvcRxLYszI36VcW5HCFS9S9fRM6zVT12D\nvR5DCuNGVhTPgN8nPsTJybmtPsemyAnjGtQy1skZbyCZKKyyeIDr5IXVov9zrgIe\nk/rAOYYy9uGZ/qSFSeK2vuGCnHApUPiBtfxLi3nSOlNyG52un0ggg4NJAoGAcd1Q\nmeKkYJJr6yf90mURa4uKNxRvJrtHEsg2L+s0/gV1Yji276fT1fWAOn1DPD5THCAn\nzhHIQ+7uELHo5sS74Rs6ZkNAo31xy74zSAh9uv5rQ3FkZYMTgWH4VFJj2vSsOsM9\nkvbpt5oylKhtT52diicLaN79wsvsn7eTRWMnmBkCgYBDBLPQpiv8k7wc093MDNy1\nvCGa7EJnZxjqt40rTQB3UyplR4MWurL+FOih7CbTSiszfUq8pGsP+S8FRrzgOhMn\nYV5gD9egK0oWEB+evw1D2RrZ8EnhibYCA6DnZZgu977MFHzqL51NRwfSKq9QJ2kZ\ne05/Z1lx2jULNuuUmSDMTQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "bigquery-athena-etl@asistentes-digitales-qa.iam.gserviceaccount.com",
+  "client_id": "100319561750195774272",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bigquery-athena-etl%40asistentes-digitales-qa.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
