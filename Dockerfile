@@ -11,7 +11,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copia el código de la aplicación al contenedor
-COPY main.py .env asistentes-digitales.json ./
+COPY main.py .env asistentes-digitales-dev.json ./
 
 # Define el comando que se ejecutará cuando se inicie el contenedor
 # Para Cloud Run, el servidor web se inicia automáticamente si sigues el patrón de funciones HTTP.
