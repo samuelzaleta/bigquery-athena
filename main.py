@@ -7,6 +7,10 @@ import datetime
 from google.cloud import bigquery
 from flask import Flask
 import time # Import for time.sleep
+import clean_data as c_data
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # carpeta actual del script
+CREDENTIALS_PATH = os.path.join(BASE_DIR, "asistentes-digitales.json")
 
 # Variables de entorno de Google Cloud
 GOOGLE_CLOUD_PROJECT = os.environ.get("GOOGLE_CLOUD_PROJECT")
@@ -23,7 +27,7 @@ ATHENA_TABLE = os.environ.get("ATHENA_TABLE")  # Nombre de la tabla de Athena
 BIGQUERY_TABLE = os.environ.get("BIGQUERY_TABLE")
 
 # Query de BigQuery fijo y no configurable
-BIGQUERY_QUERY = f"SELECT * FROM `{BIGQUERY_TABLE}`"
+BIGQUERY_QUERY = f"SELECT * FROM `{BIGQUERY_TABLE}` WHERE DATE(timestamp) = CURRENT_DATE()"
 
 app = Flask(__name__)
 
@@ -75,7 +79,7 @@ def execute_bigquery_query():
     # or let the client library find credentials automatically in Cloud Run.
     # If 'asistentes-digitales.json' is required, ensure it's properly deployed with the Cloud Run service.
     credentials = service_account.Credentials.from_service_account_file(
-        "asistentes-digitales.json",
+        CREDENTIALS_PATH,
         scopes=["https://www.googleapis.com/auth/cloud-platform"],
     )
     client = bigquery.Client(
@@ -89,9 +93,9 @@ def execute_bigquery_query():
     print(f"Query de BigQuery completado. Se obtuvieron {len(results)} filas.")
 
     #Logica adicional de python
+    clean_data = c_data.clean_transform_data(results)
 
-
-    return results
+    return clean_data
 
 
 def upload_dataframe_to_s3(df: pd.DataFrame, s3_key: str):
@@ -290,3 +294,7 @@ def main():
         error_message = f"Ocurrió un error durante la ejecución: {e}"
         print(error_message)
         return error_message, 500
+
+
+if __name__ == "__main__":
+    app.run(host="127.0.0.1", port=8000, debug=True)
