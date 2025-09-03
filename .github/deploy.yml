@@ -1,0 +1,45 @@
+name: Deploy to Cloud Run
+
+on:
+  push:
+    branches: [main, develop, qa]
+
+env:
+  PROJECT_ID: asistentes-digitales-${{ github.ref_name }}        # tu ID de proyecto en GCP
+  REGION: us-central1                         # cambia según tu región
+  SERVICE_NAME: bigquery-to-athena           # nombre de tu servicio en Cloud Run
+  IMAGE: us-central1-docker.pkg.dev/asistentes-digitales-${{ github.ref_name }}/bigquery-to-athenay/app:latest
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Configurar autenticación GCP
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+
+      - name: Configurar gcloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+        with:
+          project_id: ${{ env.PROJECT_ID }}
+
+      - name: Configurar Docker para Artifact Registry
+        run: gcloud auth configure-docker ${REGION}-docker.pkg.dev --quiet
+
+      - name: Construir y publicar imagen
+        run: |
+          docker build -t $IMAGE .
+          docker push $IMAGE
+
+      - name: Desplegar en Cloud Run
+        run: |
+          gcloud run deploy $SERVICE_NAME \
+            --image $IMAGE \
+            --region $REGION \
+            --platform managed \
+            --allow-unauthenticated

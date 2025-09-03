@@ -10,7 +10,7 @@ import time # Import for time.sleep
 import clean_data as c_data
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # carpeta actual del script
-CREDENTIALS_PATH = os.path.join(BASE_DIR, "asistentes-digitales.json")
+CREDENTIALS_PATH = os.path.join(BASE_DIR, "asistentes-digitales-dev.json")
 
 # Variables de entorno de Google Cloud
 GOOGLE_CLOUD_PROJECT = os.environ.get("GOOGLE_CLOUD_PROJECT")
